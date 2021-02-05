@@ -1,0 +1,24 @@
+server:
+  port: 1200
+  servlet:
+    context-path: /nacos-logger
+
+spring:
+  application:
+    name: nacos-logger
+  ##环境标识
+  profiles:
+    active:  test
+  #main:
+   # allow-bean-definition-overriding: true # Spring Boot 2.1 需要设定
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.244.161.111:8848
+        #namespace: a94dfa1d-cfa3-465e-9e17-d79e0148c3d6
+       # cluster-name: DEFAULT
+      config:
+        server-addr: 10.244.161.111:8848 # 配置中心地址
+        file-extension: yaml
+        #namespace: a94dfa1d-cfa3-465e-9e17-d79e0148c3d6 # 开发环境
+      #  group: NACOS_MICROSERVICE_GROUP # xx业务组
