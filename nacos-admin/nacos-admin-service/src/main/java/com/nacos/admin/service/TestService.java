@@ -1,6 +1,6 @@
-package org.nacos.admin.service;
+package com.nacos.admin.service;
 
-import org.nacos.admin.api.TestApi;
+import com.nacos.admin.api.TestApi;
 
 /**
  * todo..
@@ -8,7 +8,6 @@ import org.nacos.admin.api.TestApi;
  * @author :PHQ
  * @date：2021/2/4
  **/
-@org.apache.dubbo.config.annotation.Service
 public class TestService implements TestApi {
     @Override
     public String testDubbo() {

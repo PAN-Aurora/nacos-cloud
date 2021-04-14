@@ -3,22 +3,27 @@ server:
 spring:
   application:
     name: nacos-admin
+  ##nacos 配置服务地址
   cloud:
     nacos:
       discovery:
-        server-addr: 127.0.0.1:8848
+        server-addr: 192.168.109.99:8848
       config:
-        server-addr: 127.0.0.1:8848
+        server-addr: 192.168.109.99:8848
         file-extension: yaml
 # Dubbo服务配置
-dubbo:
-  scan:
-    base-packages: com.cloud.dubbo.service
-  protocol:
-    name: dubbo
-    port: -1
-  registry:
-    address:  nacos://127.0.0.1:8848
-  application:
-    name: nacos-admin-service
-    qos-enable: false
+#dubbo:
+#  # 提供方应用信息，用于计算依赖关系
+#  application:
+#    name: nacos-admin-service
+#  # 使用 nacos 注册中心暴露服务地址
+#  registry:
+#    protocol: nacos
+#    address: spring-cloud://localhost
+#  # 用 dubbo 协议在 20880 端口暴露服务
+#  protocol:
+#    name: dubbo
+#    port: 20880
+  # 扫描需要暴露的服务，可以被 @EnableDubbo 注解替代
+  #scan:
+  #  base-packages: com.nacos.admin.service
